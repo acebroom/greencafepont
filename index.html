@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Green Café – Siófok</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-green">Green</span>
+        <span class="logo-dot">·</span>
+        <span class="logo-cafe">Café</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">Rólunk</a></li>
+        <li><a href="#menu">Kínálat</a></li>
+        <li><a href="#gallery">Galéria</a></li>
+        <li><a href="#contact">Kapcsolat</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Siófok szíve</p>
+      <h1 class="hero-title">Green Café</h1>
+      <p class="hero-tagline">Bagel &nbsp;·&nbsp; Latte &nbsp;·&nbsp; Cake &nbsp;·&nbsp; Love</p>
+      <a href="#menu" class="btn btn-primary">Fedezd fel kínálatunkat</a>
+    </div>
+    <div class="hero-scroll-hint">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about section" id="about">
+    <div class="container about-grid">
+      <div class="about-text fade-in">
+        <span class="section-label">Rólunk</span>
+        <h2>Egy csésze öröm minden alkalomra</h2>
+        <p>A Green Café Siófok szívében várja vendégeit reggelitől brunchon át délutáni kávéig. Prémium eszpresszó géppel készített italok, friss pékáruk, kézzel készített torták és olasz gelato – minden nap, csak neked.</p>
+        <p>Nyitva tartunk <strong>minden nap 08:00 – 20:00</strong>, hogy legyen hova menni a reggeli induláshoz vagy a délutáni pihenőhöz.</p>
+        <div class="about-badges">
+          <div class="badge"><span class="badge-icon">☕</span><span>Prémium kávé</span></div>
+          <div class="badge"><span class="badge-icon">🥐</span><span>Friss reggeli</span></div>
+          <div class="badge"><span class="badge-icon">🍦</span><span>Olasz gelato</span></div>
+          <div class="badge"><span class="badge-icon">🎂</span><span>Egyedi torták</span></div>
+        </div>
+      </div>
+      <div class="about-image fade-in">
+        <div class="image-frame">
+          <img src="../Images/image_9.jpg" alt="Green Café – kávé és sütőtök dekoráció" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU HIGHLIGHTS -->
+  <section class="menu section" id="menu">
+    <div class="container">
+      <span class="section-label center">Kínálat</span>
+      <h2 class="center">Amit nálunk megtalálsz</h2>
+      <div class="menu-grid">
+        <div class="menu-card fade-in">
+          <div class="menu-card-img">
+            <img src="../Images/image_6.jpg" alt="Brunch tányér" loading="lazy" />
+          </div>
+          <div class="menu-card-body">
+            <h3>Reggeli &amp; Brunch</h3>
+            <p>Angol reggeli, lazacos bagel, tojásos fogások és friss gyümölcsök – minden nap brunchtól estig.</p>
+          </div>
+        </div>
+        <div class="menu-card fade-in">
+          <div class="menu-card-img">
+            <img src="../Images/image_13.jpg" alt="Astoria kávégép" loading="lazy" />
+          </div>
+          <div class="menu-card-body">
+            <h3>Specialty Kávék</h3>
+            <p>Astoria Sabrina gépen készített espresso, latte, cappuccino és szezonális különlegességek.</p>
+          </div>
+        </div>
+        <div class="menu-card fade-in">
+          <div class="menu-card-img">
+            <img src="../Images/image_8.jpg" alt="Sütemény pult" loading="lazy" />
+          </div>
+          <div class="menu-card-body">
+            <h3>Cukrászda</h3>
+            <p>Sacher, tiramisu, túrós pite, kókuszgolyó és még rengeteg házi készítésű finomság.</p>
+          </div>
+        </div>
+        <div class="menu-card fade-in">
+          <div class="menu-card-img">
+            <img src="../Images/image_10.jpg" alt="Gelato pult" loading="lazy" />
+          </div>
+          <div class="menu-card-body">
+            <h3>Olasz Gelato</h3>
+            <p>Mangó, caffè latte, sós karamell, málna és még sok más – friss Hisztéria gelato kínálattal.</p>
+          </div>
+        </div>
+        <div class="menu-card fade-in">
+          <div class="menu-card-img">
+            <img src="../Images/image_3.jpg" alt="Matcha ital" loading="lazy" />
+          </div>
+          <div class="menu-card-body">
+            <h3>Különleges Italok</h3>
+            <p>Friss matcha, szezonális smoothie-k és jeges italok a meleg nyári napokra.</p>
+          </div>
+        </div>
+        <div class="menu-card fade-in">
+          <div class="menu-card-img">
+            <img src="../Images/image_4.jpg" alt="Egyedi torta" loading="lazy" />
+          </div>
+          <div class="menu-card-body">
+            <h3>Egyedi Torták</h3>
+            <p>Születésnapi és alkalmi torták rendelésre – személyre szabottan, szeretettel készítve.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRUNCH BANNER -->
+  <section class="brunch-banner">
+    <div class="brunch-content fade-in">
+      <p class="brunch-label">Minden nap. Nálunk.</p>
+      <h2>Brunch</h2>
+      <p class="brunch-sub">08:00 – 20:00 között várunk szeretettel</p>
+      <a href="#contact" class="btn btn-light">Megközelítés</a>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery section" id="gallery">
+    <div class="container">
+      <span class="section-label center">Galéria</span>
+      <h2 class="center">Pillanatok a Green Caféból</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item fade-in"><img src="../Images/image_11.jpg" alt="Karamell torta szelet" loading="lazy" /></div>
+        <div class="gallery-item fade-in"><img src="../Images/image_12.jpg" alt="Sajttorta szelet" loading="lazy" /></div>
+        <div class="gallery-item fade-in"><img src="../Images/image_7.jpg" alt="Brunch asztal" loading="lazy" /></div>
+        <div class="gallery-item fade-in"><img src="../Images/image_14.jpg" alt="Sütőtök latte" loading="lazy" /></div>
+        <div class="gallery-item fade-in"><img src="../Images/image_15.jpg" alt="Abigél torta" loading="lazy" /></div>
+        <div class="gallery-item fade-in"><img src="../Images/image_16.jpg" alt="Reggeli tányér" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <span class="section-label center">Kapcsolat</span>
+      <h2 class="center">Hol találsz minket?</h2>
+      <div class="contact-grid">
+        <div class="contact-info fade-in">
+          <div class="info-card">
+            <div class="info-icon">📍</div>
+            <div>
+              <h4>Cím</h4>
+              <p>Vécsey Károly utca 11.<br />8600 Siófok</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">📞</div>
+            <div>
+              <h4>Telefon</h4>
+              <p><a href="tel:+36304770010">+36 30 477 0010</a></p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">🕗</div>
+            <div>
+              <h4>Nyitvatartás</h4>
+              <p>Minden nap<br /><strong>08:00 – 20:00</strong></p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">📘</div>
+            <div>
+              <h4>Facebook</h4>
+              <p><a href="https://www.facebook.com/people/Green-Caf%C3%A9-Si%C3%B3fok/61576153317908/" target="_blank" rel="noopener">Green Café Siófok</a></p>
+            </div>
+          </div>
+          <a class="btn btn-primary fb-btn" href="https://www.facebook.com/people/Green-Caf%C3%A9-Si%C3%B3fok/61576153317908/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            Kövess minket Facebookon
+          </a>
+        </div>
+        <div class="map-wrap fade-in">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2710.8!2d18.0175!3d46.8989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4769f0a9f9f9f9f9%3A0x1!2sV%C3%A9csey+K%C3%A1roly+utca+11%2C+8600+Si%C3%B3fok!5e0!3m2!1shu!2shu!4v1700000000000!5m2!1shu!2shu"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Green Café térkép">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-green">Green</span>
+        <span class="logo-dot">·</span>
+        <span class="logo-cafe">Café</span>
+        <p>Bagel · Latte · Cake · Love</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">Rólunk</a>
+        <a href="#menu">Kínálat</a>
+        <a href="#gallery">Galéria</a>
+        <a href="#contact">Kapcsolat</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/people/Green-Caf%C3%A9-Si%C3%B3fok/61576153317908/" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2025 Green Café Pont Kft · Siófok · Vécsey Károly u. 11.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
