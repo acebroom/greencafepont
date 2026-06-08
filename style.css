@@ -574,3 +574,65 @@ p:last-child { margin-bottom: 0; }
   .footer-links { justify-content: center; }
   .hero-scroll-hint { bottom: 20px; }
 }
+
+/* ========================================
+   MOBILE MENU OVERLAY FIX
+   ======================================== */
+
+/* Dark backdrop behind the mobile menu */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 98;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.menu-overlay.active {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .menu-overlay { display: block; pointer-events: none; }
+  .menu-overlay.active { pointer-events: all; }
+
+  .nav-links {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: auto !important;
+    width: 75vw !important;
+    max-width: 300px !important;
+    background: var(--white) !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 36px !important;
+    z-index: 99 !important;
+    box-shadow: -12px 0 48px rgba(0,0,0,0.25) !important;
+    transform: translateX(100%) !important;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    padding: 80px 24px 40px !important;
+  }
+
+  .nav-links.open {
+    transform: translateX(0) !important;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    color: var(--charcoal) !important;
+    font-size: 1.2rem !important;
+    padding: 8px 0 !important;
+    display: block !important;
+  }
+
+  .navbar { z-index: 100; }
+  .hamburger { display: flex !important; z-index: 101 !important; }
+}
