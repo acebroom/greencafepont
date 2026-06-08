@@ -16,16 +16,19 @@ window.addEventListener('scroll', () => {
 // --- Mobile hamburger menu ---
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
+const menuOverlay = document.getElementById('menu-overlay');
 
 function openMenu() {
   hamburger.classList.add('open');
   navLinks.classList.add('open');
+  menuOverlay.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
 
 function closeMenu() {
   hamburger.classList.remove('open');
   navLinks.classList.remove('open');
+  menuOverlay.classList.remove('active');
   document.body.style.overflow = '';
 }
 
@@ -37,7 +40,7 @@ function toggleMenu() {
   }
 }
 
-// touchend for mobile (no 300ms delay), debounced to prevent double-fire
+// touchend for mobile — prevents 300ms click delay, debounced to avoid double-fire
 let lastTap = 0;
 hamburger.addEventListener('touchend', (e) => {
   e.preventDefault();
@@ -50,7 +53,6 @@ hamburger.addEventListener('touchend', (e) => {
 
 hamburger.addEventListener('click', (e) => {
   e.stopPropagation();
-  // Only handle click on non-touch devices
   if (Date.now() - lastTap > 300) {
     toggleMenu();
   }
@@ -65,20 +67,14 @@ navLinks.querySelectorAll('a').forEach(link => {
   });
 });
 
-// Close when tapping/clicking outside the navbar
-document.addEventListener('touchend', (e) => {
-  if (navLinks.classList.contains('open') && !navbar.contains(e.target)) {
-    closeMenu();
-  }
+// Close when tapping the dark overlay
+menuOverlay.addEventListener('click', () => closeMenu());
+menuOverlay.addEventListener('touchend', (e) => {
+  e.preventDefault();
+  closeMenu();
 });
 
-document.addEventListener('click', (e) => {
-  if (navLinks.classList.contains('open') && !navbar.contains(e.target)) {
-    closeMenu();
-  }
-});
-
-// --- Scroll fade-in animation (IntersectionObserver) ---
+// --- Scroll fade-in animation ---
 const fadeEls = document.querySelectorAll('.fade-in');
 
 const observer = new IntersectionObserver((entries) => {
