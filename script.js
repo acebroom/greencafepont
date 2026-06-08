@@ -17,24 +17,64 @@ window.addEventListener('scroll', () => {
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  navLinks.classList.toggle('open');
+function openMenu() {
+  hamburger.classList.add('open');
+  navLinks.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMenu() {
+  hamburger.classList.remove('open');
+  navLinks.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function toggleMenu() {
+  if (navLinks.classList.contains('open')) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+}
+
+// touchend for mobile (no 300ms delay), debounced to prevent double-fire
+let lastTap = 0;
+hamburger.addEventListener('touchend', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  const now = Date.now();
+  if (now - lastTap < 300) return;
+  lastTap = now;
+  toggleMenu();
 });
 
-// Close menu when a link is clicked
+hamburger.addEventListener('click', (e) => {
+  e.stopPropagation();
+  // Only handle click on non-touch devices
+  if (Date.now() - lastTap > 300) {
+    toggleMenu();
+  }
+});
+
+// Close when a nav link is tapped or clicked
 navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    navLinks.classList.remove('open');
+  link.addEventListener('click', () => closeMenu());
+  link.addEventListener('touchend', (e) => {
+    e.stopPropagation();
+    closeMenu();
   });
 });
 
-// Close menu when clicking outside
+// Close when tapping/clicking outside the navbar
+document.addEventListener('touchend', (e) => {
+  if (navLinks.classList.contains('open') && !navbar.contains(e.target)) {
+    closeMenu();
+  }
+});
+
 document.addEventListener('click', (e) => {
-  if (!navbar.contains(e.target)) {
-    hamburger.classList.remove('open');
-    navLinks.classList.remove('open');
+  if (navLinks.classList.contains('open') && !navbar.contains(e.target)) {
+    closeMenu();
   }
 });
 
@@ -42,9 +82,8 @@ document.addEventListener('click', (e) => {
 const fadeEls = document.querySelectorAll('.fade-in');
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      // Stagger siblings in the same parent
       const siblings = Array.from(entry.target.parentElement.querySelectorAll('.fade-in'));
       const index = siblings.indexOf(entry.target);
       setTimeout(() => {
@@ -80,10 +119,9 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 sections.forEach(s => sectionObserver.observe(s));
 
-// --- Gallery lightbox (simple) ---
+// --- Gallery lightbox ---
 const galleryItems = document.querySelectorAll('.gallery-item');
 
-// Create lightbox elements
 const lightbox = document.createElement('div');
 lightbox.id = 'lightbox';
 lightbox.innerHTML = `
